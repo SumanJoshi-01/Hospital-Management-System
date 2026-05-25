@@ -1,7 +1,13 @@
+"""Patient module
+
+Patient model for the Hospital Management System.
+Stores personal data, symptoms and assigned doctor.
+"""
+
 class Patient:
     """Patient class"""
 
-    def __init__(self, first_name, surname, age, mobile, postcode):
+    def __init__(self, first_name, surname, age, mobile, postcode,symptoms):
         """
         Args:
             first_name (string): First name
@@ -18,6 +24,8 @@ class Patient:
         self.__mobile = mobile
         self.__postcode = postcode
         self.__doctor = 'None'
+        self.__symptoms = symptoms
+        self.view_symptoms = lambda: (', '.join(self.__symptoms) ) if self.__symptoms else ''
        
 
     
@@ -25,12 +33,33 @@ class Patient:
         """full name is first_name and surname"""
         #ToDo2
         return f"{self.__first_name} {self.__surname}"
+    
+    def get_first_name(self):
+        return self.__first_name
+    
+    def get_surname(self):
+        return self.__surname
+    
+    
+    def get_age(self) :
+        return self.__age
 
-
+    def get_mobile(self) :
+        return self.__mobile
+    
+    def get_postcode(self) :
+        return self.__postcode
+    
     def get_doctor(self) :
         #ToDo3
         return self.__doctor
 
+    def write_symptoms(self):
+        return ", ".join(self.__symptoms)
+            
+    def get_symptoms(self):
+        return self.__symptoms
+    
     def link(self, doctor):
         """Args: doctor(string): the doctor full name"""
         self.__doctor = doctor
@@ -43,4 +72,7 @@ class Patient:
             print(f'- {symptom}')
 
     def __str__(self):
-        return f'{self.full_name():^30}|{self.__doctor:^30}|{self.__age:^5}|{self.__mobile:^15}|{self.__postcode:^10}'
+        return f'{self.full_name():^30}|{self.__doctor:^30}|{self.__age:^5}|{self.__mobile:^15}|{self.__postcode:^10}|{self.view_symptoms()}'
+
+
+    

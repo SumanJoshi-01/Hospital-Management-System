@@ -1,0 +1,4 @@
+Sara|Smith|20|07012345678|B1 234|fever|None
+Mike|Jones|37|07555551234|L2 2AB|cough|None
+Daivd|Smith|15|07123456789|C1 ABC|headache|Jone Smith
+Bhuwan|Joshi|21|9862488873|bh 7969|Headache, Neck Pain, Risaunxa|suman joshi

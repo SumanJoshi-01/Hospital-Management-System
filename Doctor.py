@@ -1,3 +1,9 @@
+"""Doctor module
+
+Doctor entity model for the Hospital Management System.
+Includes name, speciality, and simple patient/appointment tracking.
+"""
+
 class Doctor:
     """A class that deals with the Doctor operations"""
 
@@ -46,6 +52,16 @@ class Doctor:
 
     def add_patient(self, patient):
         self.__patients.append(patient)
+        
+    def patients(self):
+        return self.__patients
+    
+    def add_appointment(self, appointment):
+        self.__appointments.append(appointment)
+
+
+    def appointments(self):
+        return self.__appointments
 
 
     def __str__(self) :
